@@ -1,0 +1,25 @@
+
+{% extends 'base.html' %}
+{% block body %}
+<!--<h1>{{bike.name}}<br></h1>-->
+
+<!--<h1>{{bike.price}}<br></h1>-->
+<!--<img style="width:100px;height:80px;" src="{{bike.img.url}}">-->
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card text-center" style="width: 100%;margin-top:30px;">
+  <img class="card-img-top" style="width:40rem;height:20rem;margin-left:13rem;" src="{{bike.img.url}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{bike.name}}</h5>
+      <h5 class="card-title">{{bike.brand}}</h5>
+      <h5 class="card-title">{{bike.price}}</h5>
+        <a href="{% url 'bike_app:update' bike.id %}" class="btn btn-dark">Update</a>
+        <a href="{% url 'bike_app:delete' bike.id %}" class="btn btn-warning">Delete</a>
+  </div>
+</div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
